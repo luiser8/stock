@@ -75,34 +75,34 @@ $connect->close();
 	</div> <!--/col-md-4-->
 
 	<div class="col-md-4">
-		<div class="card">
+		<!-- <div class="card">
 		  <div class="cardHeader">
-		    <h1><?php echo date('d'); ?></h1>
+		    <h1><?php //echo date('d'); ?></h1>
 		  </div>
 
 		  <div class="cardContainer">
-		    <p><?php echo date('l') .' '.date('d').', '.date('Y'); ?></p>
+		    <p><?php //echo date('1') .' '.date('d').', '.date('Y'); ?></p>
 		  </div>
-		</div> 
+		</div>  -->
 		<br/>
 
-		<div class="card">
+<!-- 		<div class="card">
 		  <div class="cardHeader" style="background-color:#245580;">
-		    <h1><?php if($totalRevenue) {
-		    	echo number_format($totalRevenue,2);
-		    	} else {
-		    		echo '0';
-		    		} ?></h1>
+		    <h1><?php //if($totalRevenue) {
+		    	//echo number_format($totalRevenue,2);
+		    	//} else {
+		    	//	echo '0';
+		    	//	} ?></h1>
 		  </div>
 						
 		  <div class="cardContainer">
 		    <p> <i class="glyphicon glyphicon-usd"></i> Ingresos totales</p>
 		  </div>
-		</div> 
+		</div>  -->
 
 	</div>
 
-	<div class="col-md-8">
+<!-- 	<div class="col-md-8">
 		<div class="panel panel-default">
 			<div class="panel-heading"> <i class="glyphicon glyphicon-calendar"></i> Calendario</div>
 			<div class="panel-body">
@@ -110,7 +110,7 @@ $connect->close();
 			</div>	
 		</div>
 		
-	</div>
+	</div> -->
 
 	
 </div> <!--/row-->
