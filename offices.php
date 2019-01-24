@@ -1,6 +1,6 @@
 <?php require_once 'php_action/db_connect.php' ?>
 <?php require_once 'includes/header.php'; ?>
-<?php require_once 'modal/regionModal.php'; ?>
+<?php require_once 'modal/officeModal.php'; ?>
 
 <div class="row">
 	<div class="col-md-12">
@@ -24,9 +24,8 @@
 				
 				<table class="table" id="manageOfficeTable">
 					<thead>
-						<tr>						
-							<th>Nombre de la oficina</th>
-							<th>Cógido</th>
+						<tr>		
+							<th>Cógido</th>				
 							<th>Nombre de la oficina</th>
 							<th>Tipo</th>
 							<th>Región</th>							
