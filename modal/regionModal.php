@@ -80,7 +80,7 @@
 				    	<form class="form-horizontal" id="editRegionForm" action="php_action/editRegion.php" method="POST">				    
 				    	<br />
 
-				    	<div id="edit-product-messages"></div>
+				    	<div id="edit-region-messages"></div>
 
 				    	<div class="form-group">
 			        	<label for="editRegionName" class="col-sm-3 control-label">Nombre: </label>
