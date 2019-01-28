@@ -1,4 +1,4 @@
-<?php require_once 'php_action/core.php'; ?>
+<?php require_once 'php_action/core.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,10 +54,12 @@
 
       	<li id="navDashboard"><a href="index.php"><i class="glyphicon glyphicon-list-alt"></i>  Inicio</a></li>        
         
-        <li id="navBrand"><a href="brand.php"><i class="glyphicon glyphicon-btc"></i>  Marcas</a></li>        
-
+        <?php if($_SESSION['level'] == 1){ ?>
+          <li id="navBrand"><a href="brand.php"><i class="glyphicon glyphicon-btc"></i>  Marcas</a></li>        
+        <?php } ?>
+        <?php if($_SESSION['level'] == 1){ ?>
         <li id="navCategories"><a href="categories.php"> <i class="glyphicon glyphicon-th-list"></i> Categorías</a></li>        
-
+        <?php } ?>
         <li id="navProduct"><a href="product.php"> <i class="glyphicon glyphicon-ruble"></i> Productos </a></li>     
 
         <li class="dropdown" id="navOrder">
@@ -67,7 +69,7 @@
             <li id="topNavManageOrder"><a href="orders.php?o=manord"> <i class="glyphicon glyphicon-edit"></i> Gestionar ODS</a></li>            
           </ul>
         </li> 
-        
+        <?php if($_SESSION['level'] == 1){ ?>
         <li class="dropdown" id="navRegion">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-bullhorn"></i> Establecimientos <span class="caret"></span></a>
           <ul class="dropdown-menu">            
@@ -75,14 +77,16 @@
             <li id="navReport"><a href="offices.php"> <i class="glyphicon glyphicon-map-marker"></i> Oficinas </a></li>
           </ul>
         </li> 
-        
+        <?php } ?>
         <li id="navReport"><a href="report.php"> <i class="glyphicon glyphicon-check"></i> Reportes </a></li>
 
         <li class="dropdown" id="navSetting">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <strong><?php echo $_SESSION['userName']; ?></strong> <i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
           <ul class="dropdown-menu">            
             <li id="topNavSetting"><a href="setting.php"> <i class="glyphicon glyphicon-wrench"></i> Configuración</a></li>            
-            <li id="topNavSetting"><a href="users.php"> <i class="glyphicon glyphicon-user"></i> Usuarios</a></li>            
+            <?php if($_SESSION['level'] == 1){ ?>
+            <li id="topNavSetting"><a href="users.php"> <i class="glyphicon glyphicon-user"></i> Usuarios</a></li> 
+            <?php } ?>           
             <li id="topNavLogout"><a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i> Salir</a></li>            
           </ul>
         </li>        

@@ -2,7 +2,10 @@
 
 require_once 'core.php';
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT regions.*, users.*
+			FROM regions
+				INNER JOIN users ON regions.regions_id = users.regions_id";
+
 $result = $connect->query($sql);
 
 $output = array('data' => array());
@@ -12,16 +15,18 @@ if($result->num_rows > 0) {
  // $row = $result->fetch_array();
 
  while($row = $result->fetch_array()) {
- 	$userId = $row[0];
- 	if($row[1] == 1) {
+ 	$userId = $row[5];
+ 	if($row[6] == 1) {
  		// activate member
  		$type = "Administrador";
- 	} elseif($row[1] == 2) {
+ 	} elseif($row[6] == 2) {
  		// deactivate member
  		$type = "Operador";
- 	} elseif($row[1] == 3){
+ 	} elseif($row[6] == 3){
  		$type = "Supervisor";
- 	} 
+ 	}
+
+
 
  	$button = '<!-- Single button -->
 	<div class="btn-group">
@@ -36,8 +41,9 @@ if($result->num_rows > 0) {
 
  	$output['data'][] = array( 		
  		$type,
- 		$row[2],
- 		$row[4],
+ 		$row[1],
+ 		$row[8],
+ 		$row[10],
  		$button
  		); 	
  } // /while 

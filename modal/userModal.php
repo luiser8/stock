@@ -14,10 +14,10 @@
 	      	<div id="add-region-messages"></div>     	           	       
 
 	        <div class="form-group">
-	        	<label for="username" class="col-sm-3 control-label">Nombre de usuario: </label>
+	        	<label for="user_name" class="col-sm-3 control-label">Nombre de usuario: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="username" placeholder="Nombre de usuario" name="username" autocomplete="off">
+				      <input type="text" class="form-control" id="user_name" placeholder="Nombre de usuario" name="user_name" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	    
 
@@ -54,6 +54,24 @@
 				      </select>
 				    </div>
 	        </div> <!-- /form-group-->  
+
+	        <div class="form-group">
+	        	<label for="regions_id" class="col-sm-3 control-label">Región: </label>
+	        	<label class="col-sm-1 control-label">: </label>
+				    <div class="col-sm-8">
+				      <select class="form-control" id="regions_id" name="regions_id">
+				      	<option value="">-- Selecciona --</option>
+				      	<?php 
+				      	$sql = "SELECT regions_id, regions_name FROM regions";
+								$result = $connect->query($sql);
+								while($row = $result->fetch_array()) {
+									echo "<option value='".$row[0]."'>".$row[1]."</option>";
+								} // while
+								
+				      	?>
+				      </select>
+				    </div>
+	        </div> <!-- /form-group-->
 
 	      </div> <!-- /modal-body -->
 	      
@@ -136,7 +154,25 @@
 						      	?>
 				      </select>
 				    </div>
-	        </div> <!-- /form-group-->  
+	        		</div> <!-- /form-group-->  
+
+	        		<div class="form-group">
+			        <label for="editRegions_id" class="col-sm-3 control-label">Nivel: </label>
+			        	<label class="col-sm-1 control-label">: </label>
+						    <div class="col-sm-8">
+						      <select class="form-control" id="editRegions_id" name="editRegions_id">
+						      	<option value="">-- Selecciona --</option>
+						      	<?php 
+						      	$sql = "SELECT regions_id, regions_name FROM regions";
+										$result = $connect->query($sql);
+										while($row = $result->fetch_array()) {
+											echo "<option value='".$row[0]."'>".$row[1]."</option>";
+										} // while
+										
+						      	?>
+				      </select>
+				    </div>
+	        		</div> <!-- /form-group-->  
 
 			        <div class="modal-footer editUserFooter">
 				        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Cerrar</button>

@@ -1,4 +1,5 @@
 <?php require_once 'includes/header.php'; ?>
+<?php require_once 'modal/replenishModal.php'; ?>
 
 <?php 
 
@@ -63,15 +64,19 @@ $connect->close();
 		</div> <!--/col-md-4-->
 
 	<div class="col-md-4">
+		<?php if($countLowStock >= 1){ ?>
 		<div class="panel panel-danger">
 			<div class="panel-heading">
-				<a href="product.php" style="text-decoration:none;color:black;">
+
+				<a href="#" id="addReplenishModalBtn" style="text-decoration:none;color:black;">
 					Inventario bajo
-					<span class="badge pull pull-right"><?php echo $countLowStock; ?></span>	
+					
+					<span class="badge pull pull-right"><?php echo $countLowStock; ?></span>
+						
 				</a>
 				
 			</div> <!--/panel-hdeaing-->
-		</div> <!--/panel-->
+		</div> <!--/panel--><?php } ?>
 	</div> <!--/col-md-4-->
 
 	<div class="col-md-4">
@@ -149,5 +154,5 @@ $connect->close();
 
     });
 </script>
-
+<script src="custom/js/replenish.js"></script>
 <?php require_once 'includes/footer.php'; ?>

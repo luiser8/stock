@@ -24,7 +24,8 @@ $(document).ready(function() {
 
 			// form validation
 			var level_id = $("#level_id").val();
-			var username = $("#username").val();
+			var regions_id = $("#regions_id").val();
+			var username = $("#user_name").val();
 			var password = $("#password").val();
 			var email = $("#email").val();
 
@@ -38,14 +39,24 @@ $(document).ready(function() {
 				$("#level_id").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
-			if(username == "") {
-				$("#username").after('<p class="text-danger">Este campo es obligatorio</p>');
-				$('#username').closest('.form-group').addClass('has-error');
+			if(regions_id == "") {
+				$("#regions_id").after('<p class="text-danger">Este campo es obligatorio</p>');
+				$('#regions_id').closest('.form-group').addClass('has-error');
 			}	else {
 				// remov error text field
-				$("#username").find('.text-danger').remove();
+				$("#regions_id").find('.text-danger').remove();
 				// success out for form 
-				$("#username").closest('.form-group').addClass('has-success');	  	
+				$("#regions_id").closest('.form-group').addClass('has-success');	  	
+			}	// /else
+
+			if(username == "") {
+				$("#user_name").after('<p class="text-danger">Este campo es obligatorio</p>');
+				$('#user_name').closest('.form-group').addClass('has-error');
+			}	else {
+				// remov error text field
+				$("#user_name").find('.text-danger').remove();
+				// success out for form 
+				$("#user_name").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
 			if(password == "") {
@@ -68,7 +79,7 @@ $(document).ready(function() {
 				$("#email").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
-			if(level_id && username && password && email) {
+			if(level_id && regions_id && username && password && email) {
 				// submit loading button
 				//$("#createProductBtn").button('loading');
 
@@ -180,12 +191,14 @@ function editUser(user_id = null) {
 				$("#editUserEmail").val(response.email);
 				// quantity
 				$("#editLevel_id").val(response.level_id);
+				$("#editRegions_id").val(response.regions_id);
 
 				// update the product data function
 				$("#editUserForm").unbind('submit').bind('submit', function() {
 
 					// form validation
 					var level_id = $("#editLevel_id").val();
+					var regions_id = $("#editRegions_id").val();
 					var username = $("#editUserName").val();
 					var password = $("#editPassword").val();
 					var email = $("#editUserEmail").val();
@@ -198,6 +211,16 @@ function editUser(user_id = null) {
 						$("#editLevel_id").find('.text-danger').remove();
 						// success out for form 
 						$("#editLevel_id").closest('.form-group').addClass('has-success');	  	
+					}	// /else
+
+				if(regions_id == "") {
+						$("#editRegions_id").after('<p class="text-danger">Este campo es obligatorio</p>');
+						$('#editRegions_id').closest('.form-group').addClass('has-error');
+					}	else {
+						// remov error text field
+						$("#editRegions_id").find('.text-danger').remove();
+						// success out for form 
+						$("#editRegions_id").closest('.form-group').addClass('has-success');	  	
 					}	// /else
 
 					if(username == "") {
@@ -230,7 +253,7 @@ function editUser(user_id = null) {
 						$("#editUserEmail").closest('.form-group').addClass('has-success');	  	
 					}	// /else	
 
-					if( level_id && username && password && email) {
+					if( level_id && regions_id && username && password && email) {
 						// submit loading button
 						$("#editUserBtn").button('loading');
 

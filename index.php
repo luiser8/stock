@@ -35,9 +35,13 @@ if($_POST) {
 			if($mainResult->num_rows == 1) {
 				$value = $mainResult->fetch_assoc();
 				$user_id = $value['user_id'];
+				$level_id = $value['level_id'];
+				$username = $value['username'];
 
 				// set session
 				$_SESSION['userId'] = $user_id;
+				$_SESSION['level'] = $level_id;
+				$_SESSION['userName'] = $username;
 
 				header('location: dashboard.php');	
 			} else{

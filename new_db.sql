@@ -61,10 +61,12 @@ CREATE TABLE levels (
 CREATE TABLE users (
   user_id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   level_id int(11) UNSIGNED NOT NULL,
+  regions_id int(11) UNSIGNED NOT NULL,
   username varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
   email varchar(255) NOT NULL,
-  FOREIGN KEY (level_id) REFERENCES levels(level_id)
+  FOREIGN KEY (level_id) REFERENCES levels(level_id),
+  FOREIGN KEY (regions_id) REFERENCES regions(regions_id)
   ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8 COLLATE=utf8_spanish_ci;
 

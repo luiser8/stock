@@ -1,0 +1,11 @@
+stocktestapp
+jF4e%qWdaciamxS3TNtZ
+
+
+pos_stock
+stock
+
+db
+name id8582680_pos_stock
+user id8582680_stock
+host localhost
