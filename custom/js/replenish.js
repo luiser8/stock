@@ -13,17 +13,17 @@
 		$("#submitReplenishForm").unbind('submit').bind('submit', function() {
 
 			// form validation
-			var solicitud = $("#administrador").val();
+			var name = $("#administrador").val();
 			var administrador = $("#administrador").val();
 
-			if(solicitud == "") {
-				$("#solicitud").after('<p class="text-danger">Este campo es obligatorio</p>');
-				$('#solicitud').closest('.form-group').addClass('has-error');
+			if(name == "") {
+				$("#name").after('<p class="text-danger">Este campo es obligatorio</p>');
+				$('#name').closest('.form-group').addClass('has-error');
 			}	else {
 				// remov error text field
-				$("#solicitud").find('.text-danger').remove();
+				$("#name").find('.text-danger').remove();
 				// success out for form 
-				$("#solicitud").closest('.form-group').addClass('has-success');	  	
+				$("#name").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
 			if(administrador == "") {
@@ -36,21 +36,18 @@
 				$("#administrador").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
-			if(solicitud && administrador) {
+			if(name && administrador) {
 				// submit loading button
 				//$("#createProductBtn").button('loading');
 
-				var form = $(this);
+				var form = $('#addReplenshModal');
 				var formData = new FormData(this);
-
+				console.log(formData);
 				$.ajax({
-					url : `https://formspree.io/${administrador}`,
-					type: 'POST',
-					data: formData,
+					url : form.attr('action'),
+					type: form.attr('method'),
+					data: form.serialize(),
 					dataType: 'json',
-					cache: false,
-					contentType: false,
-					processData: false,
 					success:function(response) {
 
 						if(response.success == true) {

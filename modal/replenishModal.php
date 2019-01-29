@@ -3,7 +3,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
 
-    	<form class="form-horizontal" id="submitReplenshForm">
+    	<form class="form-horizontal" id="submitReplenshForm" method="post">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	        <h4 class="modal-title"><i class="fa fa-plus"></i> Agregar renovación de inventario</h4>
@@ -14,10 +14,10 @@
 	      	<div id="add-replensh-messages"></div>     	           	       
 
 	        <div class="form-group">
-	        	<label for="solicitud" class="col-sm-3 control-label">Solicitud: </label>
+	        	<label for="name" class="col-sm-3 control-label">Solicitud: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="solicitud" placeholder="Solicitud" name="solicitud" autocomplete="off">
+				      <input type="text" class="form-control" id="name" placeholder="Solicitud" name="name" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	            	 				        	         	       
 

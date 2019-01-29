@@ -68,9 +68,9 @@ $connect->close();
 		<div class="panel panel-danger">
 			<div class="panel-heading">
 
-				<a href="#" id="addReplenishModalBtn" style="text-decoration:none;color:black;">
+				<a href="#" id="addReplenishModalBtn" data-toggle="modal" data-target="#addReplenshModal" style="text-decoration:none;color:black;">
 					Inventario bajo
-					
+					(Click para solicitar reponer)
 					<span class="badge pull pull-right"><?php echo $countLowStock; ?></span>
 						
 				</a>
