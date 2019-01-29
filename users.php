@@ -1,7 +1,6 @@
 <?php require_once 'php_action/db_connect.php' ?>
 <?php require_once 'includes/header.php'; ?>
 <?php require_once 'modal/userModal.php'; ?>
-<?php var_dump($_SESSION); ?>
 <div class="row">
 	<div class="col-md-12">
 
