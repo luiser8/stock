@@ -28,7 +28,7 @@
 				      <select class="form-control" id="administrador" name="administrador">
 				      	<option value="">-- Selecciona --</option>
 				      	<?php 
-				      	$sql = "SELECT username, email FROM users";
+				      	$sql = "SELECT username, email FROM users WHERE level_id = 1";
 								$result = $connect->query($sql);
 								while($row = $result->fetch_array()) {
 									echo "<option value='".$row[1]."'>".$row[1]."</option>";

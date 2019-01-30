@@ -114,3 +114,14 @@ CREATE TABLE order_item (
   FOREIGN KEY (product_id) REFERENCES product(product_id)
   ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8 COLLATE=utf8_spanish_ci;
+
+#Notificaciones notifications
+CREATE TABLE notifications (
+  notifications_id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  user_id int(11) UNSIGNED NOT NULL,
+  notifications_body varchar(255) NOT NULL,
+  notifications_active int(11) NOT NULL DEFAULT 1,
+  notifications__status int(11) NOT NULL DEFAULT 1,
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
+  ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8 COLLATE=utf8_spanish_ci;

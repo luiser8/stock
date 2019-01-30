@@ -86,8 +86,11 @@
             <li id="topNavSetting"><a href="setting.php"> <i class="glyphicon glyphicon-wrench"></i> Configuración</a></li>            
             <?php if($_SESSION['level'] == 1){ ?>
             <li id="topNavSetting"><a href="users.php"> <i class="glyphicon glyphicon-user"></i> Usuarios</a></li> 
-            <?php } ?>           
-            <li id="topNavLogout"><a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i> Salir</a></li>            
+            <?php } ?>
+            <?php if($_SESSION['level'] == 1){ ?>         
+            <li id="topNavLogout"><a href="logout.php"> <i class="glyphicon glyphicon-comment"></i> Notificaciones (0)</a></li>
+            <?php } ?>
+            <li id="topNavLogout"><a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i> Salir</a></li>                      
           </ul>
         </li>        
                
