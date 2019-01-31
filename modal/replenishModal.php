@@ -3,7 +3,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
 
-    	<form class="form-horizontal" id="submitReplenshForm" method="post">
+    	<form class="form-horizontal" id="submitReplenishForm" action="php_action/createReplanish.php" method="post">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	        <h4 class="modal-title"><i class="fa fa-plus"></i> Agregar renovación de inventario</h4>
@@ -14,10 +14,10 @@
 	      	<div id="add-replensh-messages"></div>     	           	       
 
 	        <div class="form-group">
-	        	<label for="name" class="col-sm-3 control-label">Solicitud: </label>
+	        	<label for="notifications_body" class="col-sm-3 control-label">Solicitud: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="name" placeholder="Solicitud" name="name" autocomplete="off">
+				      <input type="text" class="form-control" id="notifications_body" placeholder="Solicitud" name="notifications_body" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	            	 				        	         	       
 
@@ -28,10 +28,10 @@
 				      <select class="form-control" id="administrador" name="administrador">
 				      	<option value="">-- Selecciona --</option>
 				      	<?php 
-				      	$sql = "SELECT username, email FROM users WHERE level_id = 1";
+				      	$sql = "SELECT user_id, email FROM users WHERE level_id = 1";
 								$result = $connect->query($sql);
 								while($row = $result->fetch_array()) {
-									echo "<option value='".$row[1]."'>".$row[1]."</option>";
+									echo "<option value='".$row[0]."'>".$row[1]."</option>";
 								} // while
 								
 				      	?>

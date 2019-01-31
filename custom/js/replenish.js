@@ -13,17 +13,17 @@
 		$("#submitReplenishForm").unbind('submit').bind('submit', function() {
 
 			// form validation
-			var name = $("#administrador").val();
+			var notifications_body = $("#notifications_body").val();
 			var administrador = $("#administrador").val();
 
-			if(name == "") {
-				$("#name").after('<p class="text-danger">Este campo es obligatorio</p>');
-				$('#name').closest('.form-group').addClass('has-error');
+			if(notifications_body == "") {
+				$("#notifications_body").after('<p class="text-danger">Este campo es obligatorio</p>');
+				$('#notifications_body').closest('.form-group').addClass('has-error');
 			}	else {
 				// remov error text field
-				$("#name").find('.text-danger').remove();
+				$("#notifications_body").find('.text-danger').remove();
 				// success out for form 
-				$("#name").closest('.form-group').addClass('has-success');	  	
+				$("#notifications_body").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
 			if(administrador == "") {
@@ -36,25 +36,28 @@
 				$("#administrador").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
-			if(name && administrador) {
+			if(notifications_body && administrador) {
 				// submit loading button
 				//$("#createProductBtn").button('loading');
 
-				var form = $('#addReplenshModal');
+				var form = $(this);
 				var formData = new FormData(this);
 				console.log(formData);
 				$.ajax({
 					url : form.attr('action'),
 					type: form.attr('method'),
-					data: form.serialize(),
+					data: formData,
 					dataType: 'json',
+					cache: false,
+					contentType: false,
+					processData: false,
 					success:function(response) {
 
 						if(response.success == true) {
 							// submit loading button
 							//$("#createProductBtn").button('reset');
 							
-							$("#submitUserForm")[0].reset();
+							$("#submitReplenishForm")[0].reset();
 
 							$("html, body, div.modal, div.modal-content, div.modal-body").animate({scrollTop: '0'}, 100);
 																	

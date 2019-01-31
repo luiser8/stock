@@ -119,6 +119,7 @@ CREATE TABLE order_item (
 CREATE TABLE notifications (
   notifications_id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   user_id int(11) UNSIGNED NOT NULL,
+  notifications_admin varchar(255) NOT NULL,
   notifications_body varchar(255) NOT NULL,
   notifications_active int(11) NOT NULL DEFAULT 1,
   notifications__status int(11) NOT NULL DEFAULT 1,
