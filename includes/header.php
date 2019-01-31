@@ -87,8 +87,14 @@
             <?php if($_SESSION['level'] == 1){ ?>
             <li id="topNavSetting"><a href="users.php"> <i class="glyphicon glyphicon-user"></i> Usuarios</a></li> 
             <?php } ?>
-            <?php if($_SESSION['level'] == 1){ ?>        
-            <li id="topNavLogout"><a href="#"> <i class="glyphicon glyphicon-comment"></i> Notificaciones ()</a></li>
+            <?php if($_SESSION['level'] == 1){ ?>
+              <?php 
+              $sql = "SELECT COUNT(notifications.notifications_id) AS Total FROM notifications INNER JOIN users ON notifications.notifications_admin = users.user_id WHERE notifications.notifications_admin=".$_SESSION['userId'];;
+                $result = $connect->query($sql);
+                foreach ($result as $item):?>
+              <?php endforeach ?>
+
+            <li id="topNavLogout"><a href="#"> <i class="glyphicon glyphicon-comment"></i> Notificaciones <span class="badge"><?php echo $item['Total']; ?></span></a></li>
             <?php } ?>
             <li id="topNavLogout"><a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i> Salir</a></li>                      
           </ul>
