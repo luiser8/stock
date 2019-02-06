@@ -94,7 +94,7 @@
                 foreach ($result as $item):?>
               <?php endforeach ?>
 
-            <li id="topNavLogout"><a href="#"> <i class="glyphicon glyphicon-comment"></i> Notificaciones <span class="badge"><?php echo $item['Total']; ?></span></a></li>
+            <li id="topNavLogout"><a href="notifications.php"> <i class="glyphicon glyphicon-comment"></i> Notificaciones <span class="badge"><?php echo $item['Total']; ?></span></a></li>
             <?php } ?>
             <li id="topNavLogout"><a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i> Salir</a></li>                      
           </ul>

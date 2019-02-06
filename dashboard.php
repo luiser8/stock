@@ -70,9 +70,10 @@ $connect->close();
 
 				<a href="#" id="addReplenishModalBtn" data-toggle="modal" data-target="#addReplenshModal" style="text-decoration:none;color:black;">
 					Inventario bajo
-					(Click para solicitar reponer)
+					<?php if($_SESSION['level'] != 1){ ?>
+						(Click para solicitar reponer)
+					<?php } ?>
 					<span class="badge pull pull-right"><?php echo $countLowStock; ?></span>
-						
 				</a>
 				
 			</div> <!--/panel-hdeaing-->

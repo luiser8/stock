@@ -82,7 +82,7 @@ CREATE TABLE product (
   rate varchar(255) NOT NULL,
   active int(11) NOT NULL DEFAULT 0,
   status int(11) NOT NULL DEFAULT 0,
-  FOREIGN KEY (offices_id) REFERENCES offices(offices_id),
+  FOREIGN KEY (offices_id) REFERENCES offices(offices_id)
   ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -125,7 +125,8 @@ CREATE TABLE notifications (
   notifications_admin int(11) NOT NULL,
   notifications_body varchar(255) NOT NULL,
   notifications_active int(11) NOT NULL DEFAULT 1,
-  notifications__status int(11) NOT NULL DEFAULT 1,
+  notifications_status int(11) NOT NULL DEFAULT 1,
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(user_id)
   ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8 COLLATE=utf8_spanish_ci;
