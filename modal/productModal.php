@@ -51,6 +51,25 @@
 	        </div> <!-- /form-group-->	     	        
 
 	        <div class="form-group">
+	        	<label for="brandOffice" class="col-sm-3 control-label">Oficina o sucursal: </label>
+	        	<label class="col-sm-1 control-label">: </label>
+				    <div class="col-sm-8">
+				      <select class="form-control" id="brandOffice" name="brandOffice">
+				      	<option value="">-- Selecciona --</option>
+				      	<?php 
+				      	$sql = "SELECT offices_id, offices_name FROM offices WHERE offices_active = 1 AND offices_status = 1";
+								$result = $connect->query($sql);
+
+								while($row = $result->fetch_array()) {
+									echo "<option value='".$row[0]."'>".$row[1]."</option>";
+								} // while
+								
+				      	?>
+				      </select>
+				    </div>
+	        </div> <!-- /form-group-->	
+
+	        <div class="form-group">
 	        	<label for="brandName" class="col-sm-3 control-label">Fabricante: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
@@ -207,6 +226,25 @@
 						      <input type="text" class="form-control" id="editRate" placeholder="Precio" name="editRate" autocomplete="off">
 						    </div>
 			        </div> <!-- /form-group-->	     	        
+
+	        <div class="form-group">
+	        	<label for="editBrandOffice" class="col-sm-3 control-label">Oficina o sucursal: </label>
+	        	<label class="col-sm-1 control-label">: </label>
+				    <div class="col-sm-8">
+				      <select class="form-control" id="editBrandOffice" name="editBrandOffice">
+				      	<option value="">-- Selecciona --</option>
+				      	<?php 
+				      	$sql = "SELECT offices_id, offices_name FROM offices WHERE offices_active = 1 AND offices_status = 1";
+								$result = $connect->query($sql);
+
+								while($row = $result->fetch_array()) {
+									echo "<option value='".$row[0]."'>".$row[1]."</option>";
+								} // while
+								
+				      	?>
+				      </select>
+				    </div>
+	        </div> <!-- /form-group-->
 
 			        <div class="form-group">
 			        	<label for="editBrandName" class="col-sm-3 control-label">Fabricante: </label>

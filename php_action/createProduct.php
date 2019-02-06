@@ -5,7 +5,7 @@ require_once 'core.php';
 $valid['success'] = array('success' => false, 'messages' => array());
 
 if($_POST) {	
-
+var_dump($_POST);
 	$productName 		= $_POST['productName'];
   // $productImage 	= $_POST['productImage'];
   $quantity 			= $_POST['quantity'];
@@ -13,6 +13,7 @@ if($_POST) {
   $brandName 			= $_POST['brandName'];
   $categoryName 	= $_POST['categoryName'];
   $productStatus 	= $_POST['productStatus'];
+  $brandOffice 	= $_POST['brandOffice'];
 
 	$type = explode('.', $_FILES['productImage']['name']);
 	$type = $type[count($type)-1];		
@@ -21,8 +22,8 @@ if($_POST) {
 		if(is_uploaded_file($_FILES['productImage']['tmp_name'])) {			
 			if(move_uploaded_file($_FILES['productImage']['tmp_name'], $url)) {
 				
-				$sql = "INSERT INTO product (product_name, product_image, brand_id, categories_id, quantity, rate, active, status) 
-				VALUES ('$productName', '$url', '$brandName', '$categoryName', '$quantity', '$rate', '$productStatus', 1)";
+				$sql = "INSERT INTO product (product_id, offices_id, brand_id, categories_id, product_name, product_image, quantity, rate, active, status) 
+				VALUES (NULL, '$brandOffice', '$brandName', '$categoryName', '$productName', '$url', '$quantity', '$rate', '$productStatus', 1)";
 
 				if($connect->query($sql) === TRUE) {
 					$valid['success'] = true;

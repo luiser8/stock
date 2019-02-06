@@ -73,14 +73,17 @@ CREATE TABLE users (
 #Productos product
 CREATE TABLE product (
   product_id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  product_name varchar(255) NOT NULL,
-  product_image text NOT NULL,
+  offices_id int(11) UNSIGNED NOT NULL,
   brand_id int(11) NOT NULL,
   categories_id int(11) NOT NULL,
+  product_name varchar(255) NOT NULL,
+  product_image text NOT NULL,
   quantity varchar(255) NOT NULL,
   rate varchar(255) NOT NULL,
   active int(11) NOT NULL DEFAULT 0,
-  status int(11) NOT NULL DEFAULT 0
+  status int(11) NOT NULL DEFAULT 0,
+  FOREIGN KEY (offices_id) REFERENCES offices(offices_id),
+  ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8 COLLATE=utf8_spanish_ci;
 
 #Pedidos orders

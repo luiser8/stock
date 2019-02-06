@@ -27,6 +27,7 @@
 						<tr>
 							<th style="width:10%;">Imagen</th>							
 							<th>Nombre del producto</th>
+							<th>Cod. Sucursal</th>
 							<th>Precio</th>							
 							<th>Stock</th>
 							<th>Fabricante</th>

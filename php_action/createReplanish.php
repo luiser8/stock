@@ -14,6 +14,7 @@ if($_POST) {
 	if($connect->query($sql) === TRUE) {
 	 	$valid['success'] = true;
 		$valid['messages'] = "Creado exitosamente";	
+		Send($administrador, $notifications_body);
 	} else {
 	 	$valid['success'] = false;
 	 	$valid['messages'] = "Error no se ha podido guardar";
@@ -25,3 +26,11 @@ if($_POST) {
 	echo json_encode($valid);
  
 } // /if $_POST
+
+function Send($to_email, $message){
+	// $to_email = 'leduardo.rondon@gmail.com';
+	 $subject = 'Notificacion de renovacion de stock.';
+	// $message = 'Al fin esta mierda envia';
+	$headers = 'From: noreply@stock.com';
+	mail($to_email,$subject,$message,$headers);
+}

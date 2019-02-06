@@ -47,6 +47,7 @@ $(document).ready(function() {
 			var brandName = $("#brandName").val();
 			var categoryName = $("#categoryName").val();
 			var productStatus = $("#productStatus").val();
+			var brandOffice = $("#brandOffice").val();
 	
 			if(productImage == "") {
 				$("#productImage").closest('.center-block').after('<p class="text-danger">Este campo es obligatorio</p>');
@@ -118,9 +119,19 @@ $(document).ready(function() {
 				$("#productStatus").closest('.form-group').addClass('has-success');	  	
 			}	// /else
 
+			if(brandOffice == "") {
+				$("#brandOffice").after('<p class="text-danger">Este campo es obligatorio</p>');
+				$('#brandOffice').closest('.form-group').addClass('has-error');
+			}	else {
+				// remov error text field
+				$("#brandOffice").find('.text-danger').remove();
+				// success out for form 
+				$("#brandOffice").closest('.form-group').addClass('has-success');	  	
+			}	// /else
+
 			if(productImage && productName && quantity && rate && brandName && categoryName && productStatus) {
 				// submit loading button
-				$("#createProductBtn").button('loading');
+				//$("#createProductBtn").button('loading');
 
 				var form = $(this);
 				var formData = new FormData(this);
@@ -243,6 +254,7 @@ function editProduct(productId = null) {
 				$("#editCategoryName").val(response.categories_id);
 				// status
 				$("#editProductStatus").val(response.active);
+				$("#editBrandOffice").val(response.offices_id);
 
 				// update the product data function
 				$("#editProductForm").unbind('submit').bind('submit', function() {
@@ -255,8 +267,8 @@ function editProduct(productId = null) {
 					var brandName = $("#editBrandName").val();
 					var categoryName = $("#editCategoryName").val();
 					var productStatus = $("#editProductStatus").val();
+					var brandOffice = $("#editBrandOffice").val();
 								
-
 					if(productName == "") {
 						$("#editProductName").after('<p class="text-danger">Este campo es obligatorio</p>');
 						$('#editProductName').closest('.form-group').addClass('has-error');
@@ -316,6 +328,16 @@ function editProduct(productId = null) {
 						// success out for form 
 						$("#editProductStatus").closest('.form-group').addClass('has-success');	  	
 					}	// /else					
+
+					if(brandOffice == "") {
+						$("#editBrandOffice").after('<p class="text-danger">Este campo es obligatorio</p>');
+						$('#editBrandOffice').closest('.form-group').addClass('has-error');
+					}	else {
+						// remov error text field
+						$("#editBrandOffice").find('.text-danger').remove();
+						// success out for form 
+						$("#editBrandOffice").closest('.form-group').addClass('has-success');	  	
+					}	// /else	
 
 					if(productName && quantity && rate && brandName && categoryName && productStatus) {
 						// submit loading button
