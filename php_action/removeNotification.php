@@ -11,7 +11,7 @@ if($notificationId) {
 
  $sql = "UPDATE notifications SET notifications_status = 2 WHERE notifications_id = {$notificationId}";
 
- if($connect->query($sql) === TRUE && $connect->query($orderItem) === TRUE) {
+ if($connect->query($sql) === TRUE) {
  	$valid['success'] = true;
 	$valid['messages'] = "Successfully Removed";		
  } else {

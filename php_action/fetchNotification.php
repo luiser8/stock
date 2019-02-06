@@ -23,7 +23,7 @@ if($result->num_rows > 0) {
 	    Acción <span class="caret"></span>
 	  </button>
 	  <ul class="dropdown-menu">
-	    <li><a type="button" data-toggle="modal" data-target="#validateNotificationModal" onclick="validateNotification('.$row[0].')"> <i class="glyphicon glyphicon-trash"></i> Eliminar</a></li>       
+	    <li><a type="button" data-toggle="modal" data-target="#validateNotificationModal" onclick="validateNotification('.$row[0].')"> <i class="glyphicon glyphicon-ok"></i> Validar</a></li>       
 	  </ul>
 	</div>';
 

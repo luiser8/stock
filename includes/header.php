@@ -89,7 +89,7 @@
             <?php } ?>
             <?php if($_SESSION['level'] == 1){ ?>
               <?php 
-              $sql = "SELECT COUNT(notifications.notifications_id) AS Total FROM notifications INNER JOIN users ON notifications.notifications_admin = users.user_id WHERE notifications.notifications_admin=".$_SESSION['userId'];;
+              $sql = "SELECT COUNT(notifications.notifications_id) AS Total FROM notifications INNER JOIN users ON notifications.notifications_admin = users.user_id WHERE notifications.notifications_status = 1 AND notifications.notifications_admin=".$_SESSION['userId'];;
                 $result = $connect->query($sql);
                 foreach ($result as $item):?>
               <?php endforeach ?>

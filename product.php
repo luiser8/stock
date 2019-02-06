@@ -33,7 +33,9 @@
 							<th>Fabricante</th>
 							<th>Categoría</th>
 							<th>Estado</th>
+							<?php if($_SESSION['level'] == 1){ ?>		
 							<th style="width:15%;">Opciones</th>
+							<?php } ?>
 						</tr>
 					</thead>
 				</table>
