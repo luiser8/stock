@@ -80,7 +80,24 @@ if($_GET['o'] == 'add') {
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Teléfono" autocomplete="off" />
 			    </div>
-			  </div> <!--/form-group-->			  
+			  </div> <!--/form-group-->		
+
+			  <div class="form-group">
+	        	<label for="regions_id" class="col-sm-2 control-label">Sucursal</label>
+				    <div class="col-sm-8">
+				      <select class="form-control" id="regions_id" name="regions_id">
+				      	<option value="">-- Selecciona --</option>
+				      	<?php 
+				      	$sql = "SELECT regions_id, regions_name FROM regions";
+								$result = $connect->query($sql);
+								while($row = $result->fetch_array()) {
+									echo "<option value='".$row[0]."'>".$row[1]."</option>";
+								} // while
+								
+				      	?>
+				      </select>
+				    </div>
+	        </div> <!-- /form-group-->	  
 
 			  <table class="table" id="productTable">
 			  	<thead>
