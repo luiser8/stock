@@ -28,7 +28,7 @@ if($_POST) {
 		</tr>
 
 		<tr>';
-		$totalAmount = "";
+		$totalAmount = 0;
 		while ($result = $query->fetch_assoc()) {
 			$table .= '<tr>
 				<td><center>'.$result['order_date'].'</center></td>
@@ -66,7 +66,7 @@ if($_POST) {
 		</tr>
 
 		<tr>';
-		$totalAmount = "";
+		$totalAmount = 0;
 		while ($result = $query->fetch_assoc()) {
 			$table .= '<tr>
 				<td><center>'.$result['order_date'].'</center></td>
