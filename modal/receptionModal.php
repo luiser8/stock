@@ -9,11 +9,8 @@
       <div class="modal-body" style="max-height:450px; overflow:auto;">
 		<div id="add-reception-messages"></div>
         <div class="form-group">
-	        	<label for="quantity_reception" class="col-sm-3 control-label">Cantidad recibida: </label>
-	        	<label class="col-sm-1 control-label">: </label>
-				    <div class="col-sm-8">
-				      <input type="number" class="form-control" id="quantity_reception" placeholder="Cantidad recibida" name="quantity_reception" autocomplete="off">
-				    </div>
+	        	<label for="quantity_reception" class="control-label">Cantidad recibida: </label>
+				 <input type="number" class="form-control" id="quantity_reception" placeholder="Cantidad recibida" name="quantity_reception" autocomplete="off">
 	        </div> <!-- /form-group-->
       </div>
       <div class="modal-footer receptionNotificationrFooter">
