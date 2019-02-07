@@ -29,6 +29,7 @@ $(document).ready(function() {
 			var discount = $("#discount").val();
 			var paymentType = $("#paymentType").val();
 			var paymentStatus = $("#paymentStatus").val();		
+			var offices_id = $("#offices_id").val();		
 
 			// form validation 
 			if(orderDate == "") {
@@ -79,7 +80,12 @@ $(document).ready(function() {
 			} else {
 				$('#paymentStatus').closest('.form-group').addClass('has-success');
 			} // /else
-
+			if(offices_id == "") {
+				$("#offices_id").after('<p class="text-danger"> Este campo es obligatorio </p>');
+				$('#offices_id').closest('.form-group').addClass('has-error');
+			} else {
+				$('#offices_id').closest('.form-group').addClass('has-success');
+			} // /else
 
 			// array validation
 			var productName = document.getElementsByName('productName[]');				
@@ -197,7 +203,8 @@ $(document).ready(function() {
 			var paid = $("#paid").val();
 			var discount = $("#discount").val();
 			var paymentType = $("#paymentType").val();
-			var paymentStatus = $("#paymentStatus").val();		
+			var paymentStatus = $("#paymentStatus").val();
+			var offices_id = $("#offices_id").val();		
 
 			// form validation 
 			if(orderDate == "") {
@@ -247,6 +254,12 @@ $(document).ready(function() {
 				$('#paymentStatus').closest('.form-group').addClass('has-error');
 			} else {
 				$('#paymentStatus').closest('.form-group').addClass('has-success');
+			} // /else
+			if(offices_id == "") {
+				$("#offices_id").after('<p class="text-danger"> Este campo es obligatorio </p>');
+				$('#offices_id').closest('.form-group').addClass('has-error');
+			} else {
+				$('#offices_id').closest('.form-group').addClass('has-success');
 			} // /else
 
 

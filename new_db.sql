@@ -89,6 +89,7 @@ CREATE TABLE product (
 #Pedidos orders
 CREATE TABLE orders (
   order_id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  offices_id int(11) UNSIGNED NOT NULL,
   order_date date NOT NULL,
   client_name varchar(255) NOT NULL,
   client_contact varchar(255) NOT NULL,
@@ -101,7 +102,9 @@ CREATE TABLE orders (
   due varchar(255) NOT NULL,
   payment_type int(11) NOT NULL,
   payment_status int(11) NOT NULL,
-  order_status int(11) NOT NULL DEFAULT 0
+  order_status int(11) NOT NULL DEFAULT 0,
+  FOREIGN KEY (offices_id) REFERENCES offices(offices_id)
+  ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8 COLLATE=utf8_spanish_ci;
 
 #Pedidos items order_item

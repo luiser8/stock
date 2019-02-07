@@ -83,12 +83,12 @@ if($_GET['o'] == 'add') {
 			  </div> <!--/form-group-->		
 
 			  <div class="form-group">
-	        	<label for="regions_id" class="col-sm-2 control-label">Sucursal</label>
+	        	<label for="offices_id" class="col-sm-2 control-label">Sucursal</label>
 				    <div class="col-sm-8">
-				      <select class="form-control" id="regions_id" name="regions_id">
-				      	<option value="">-- Selecciona --</option>
+				      <select class="form-control" id="offices_id" name="offices_id">
+				      	<option value=""> Selecciona Sucursal</option>
 				      	<?php 
-				      	$sql = "SELECT regions_id, regions_name FROM regions";
+				      	$sql = "SELECT offices_id, offices_name FROM offices";
 								$result = $connect->query($sql);
 								while($row = $result->fetch_array()) {
 									echo "<option value='".$row[0]."'>".$row[1]."</option>";
