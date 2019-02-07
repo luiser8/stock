@@ -37,11 +37,13 @@ if($_POST) {
 				$user_id = $value['user_id'];
 				$level_id = $value['level_id'];
 				$username = $value['username'];
+				$email = $value['email'];
 
 				// set session
 				$_SESSION['userId'] = $user_id;
 				$_SESSION['level'] = $level_id;
 				$_SESSION['userName'] = $username;
+				$_SESSION['email'] = $email;
 
 				header('location: dashboard.php');	
 			} else{
