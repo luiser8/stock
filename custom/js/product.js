@@ -536,6 +536,62 @@ function removeProduct(productId = null) {
 	} // /if productid
 } // /remove product function
 
+function receptionProduct(productId = null) {
+	if(productId) {
+		// remove product button clicked
+		$("#receptionProductBtn").unbind('click').bind('click', function() {
+			// loading remove button
+			$("#receptionProductModalBtn").button('loading');
+			$.ajax({
+				url: 'php_action/receptionProduct.php',
+				type: 'post',
+				data: {productId: productId, quantity: $('#quantity_reception').val()},
+				dataType: 'json',
+				success:function(response) {
+					// loading remove button
+					$("#receptionProductModalBtn").button('reset');
+					if(response.success == true) {
+						// remove product modal
+						$("#receptionModal").modal('hide');
+
+						// update the product table
+						manageProductTable.ajax.reload(null, false);
+
+						// remove success messages
+						$(".remove-messages").html('<div class="alert alert-success">'+
+		            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+		            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ response.messages +
+		          '</div>');
+
+						// remove the mesages
+	          $(".alert-success").delay(500).show(10, function() {
+							$(this).delay(3000).hide(10, function() {
+								$(this).remove();
+							});
+						}); // /.alert
+					} else {
+
+						// remove success messages
+						$(".removeProductMessages").html('<div class="alert alert-success">'+
+		            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+		            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ response.messages +
+		          '</div>');
+
+						// remove the mesages
+	          $(".alert-success").delay(500).show(10, function() {
+							$(this).delay(3000).hide(10, function() {
+								$(this).remove();
+							});
+						}); // /.alert
+
+					} // /error
+				} // /success function
+			}); // /ajax fucntion to remove the product
+			return false;
+		}); // /remove product btn clicked
+	} // /if productid
+} // /remove product function
+
 function clearForm(oForm) {
 	// var frm_elements = oForm.elements;									
 	// console.log(frm_elements);

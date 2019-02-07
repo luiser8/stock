@@ -1,6 +1,7 @@
 <?php require_once 'php_action/db_connect.php' ?>
 <?php require_once 'includes/header.php'; ?>
 <?php require_once 'modal/productModal.php'; ?>
+<?php require_once 'modal/receptionModal.php'; ?>
 
 <div class="row">
 	<div class="col-md-12">

@@ -39,6 +39,7 @@ if($result->num_rows > 0) {
 	  </button>
 	  <ul class="dropdown-menu">
 
+	    <li><a type="button" data-toggle="modal" id="receptionProductModalBtn" data-target="#receptionModal" onclick="receptionProduct('.$productId.')"> <i class="glyphicon glyphicon-ok"></i> Recepción</a></li>
 	    <li><a type="button" data-toggle="modal" id="editProductModalBtn" data-target="#editProductModal" onclick="editProduct('.$productId.')"> <i class="glyphicon glyphicon-edit"></i> Editar</a></li>
 	    <li><a type="button" data-toggle="modal" data-target="#removeProductModal" id="removeProductModalBtn" onclick="removeProduct('.$productId.')"> <i class="glyphicon glyphicon-trash"></i> Eliminar</a></li>       
 	  </ul>
